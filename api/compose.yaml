@@ -1,0 +1,21 @@
+# Al servidor: ~/malaherbasoft-api/ amb aquest fitxer, servidor.mjs i un .env amb RESUM_TOKEN=...
+# Només escolta a 127.0.0.1: hi arriba nginx (location /api/).
+services:
+  api:
+    image: node:24-alpine
+    command: ["node", "--no-warnings", "/app/servidor.mjs"]
+    user: "1000:1000"
+    read_only: true
+    mem_limit: 128m
+    restart: unless-stopped
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8787
+      DB: /dades/estadistiques.sqlite
+      JOCS: ferro-9,suma-zero
+      RESUM_TOKEN: ${RESUM_TOKEN:?falta RESUM_TOKEN al .env}
+    volumes:
+      - ./servidor.mjs:/app/servidor.mjs:ro
+      - ./dades:/dades
+    ports:
+      - "127.0.0.1:8787:8787"
