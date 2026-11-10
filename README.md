@@ -2,10 +2,19 @@
 
 Web del segell (malaherbasoft.cat): aventures gràfiques en català, gratuïtes i per jugar al navegador.
 
-- `index.html`: la landing, una sola pàgina estàtica sense dependències (només Google Fonts).
-- `img/`: el primer frame de les portades i d'algunes sales de cada joc (480×270, es mostren pixelades).
+- `public/` és la web tal com es publica.
+- `public/index.html`: la landing, una sola pàgina estàtica sense dependències (només Google Fonts).
+- `public/img/`: el primer frame de les portades i d'algunes sales de cada joc (480×270, es mostren pixelades).
 
-Per veure-la: obre `index.html` al navegador.
+Per veure-la: obre `public/index.html` al navegador.
+
+## Desplegament
+
+Cada push a `main` publica `public/` a malaherbasoft.cat amb GitHub Actions
+(`.github/workflows/deploy.yml`), per rsync cap a
+`/var/www/malaherbasoft.cat/public_html` del servidor. Si el missatge del commit
+conté `[skip deploy]`, no es desplega. També es pot llançar a mà des de la
+pestanya Actions (*Run workflow*).
 
 Pendent:
 - Durada i edat de cada joc (ara són provisionals).
