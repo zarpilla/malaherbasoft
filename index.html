@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Aventures gràfiques en català, gratuïtes i per jugar al navegador: Ferro-9 i Suma Zero.">
+<title>Mala Herba Soft</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Layout: una sola nit pixelada; capçalera, tesi curta, dos jocs com a "cartutxos" alternats, manifest i peu. Disseny fosc a propòsit. */
+:root {
+  --night: #15131f;      /* cel de les portades */
+  --night-2: #1d1a2b;
+  --ink: #ece7dc;
+  --ink-dim: #a9a3b8;
+  --sap: #9cc46a;        /* la mala herba */
+  --copper: #e0894a;     /* Ferro-9 */
+  --teal: #5fd4c4;       /* Suma Zero */
+  --line: #2f2a44;
+  --display: "Pixelify Sans", "Courier New", monospace;
+  --body: "Atkinson Hyperlegible", system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+img { max-width: 100%; }
+body {
+  background: var(--night);
+  color: var(--ink);
+  font: 400 1.0625rem/1.6 var(--body);
+}
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--sap); outline-offset: 3px; }
+.wrap {
+  max-width: 1080px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+img.px { image-rendering: pixelated; display: block; width: 100%; max-width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+
+/* capçalera */
+header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 22px; flex-wrap: wrap; }
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo svg { width: 34px; height: 34px; image-rendering: pixelated; flex: none; }
+.logo b { font: 700 1.35rem/1 var(--display); letter-spacing: .02em; }
+.logo b span { color: var(--sap); }
+nav { display: flex; gap: 22px; font: 500 .95rem/1 var(--display); }
+nav a { text-decoration: none; color: var(--ink-dim); }
+nav a:hover { color: var(--sap); }
+
+/* tesi */
+.hero { padding-block: 56px 40px; }
+.hero h1 {
+  font: 600 clamp(2.1rem, 5.6vw, 3.9rem)/1.05 var(--display);
+  margin: 0; max-width: 17ch; text-wrap: balance;
+}
+.hero h1 em { font-style: normal; color: var(--sap); }
+.hero p { color: var(--ink-dim); max-width: 56ch; margin: 22px 0 0; font-size: 1.15rem; }
+.facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; padding: 0; list-style: none; }
+.facts li { font: 500 .85rem/1 var(--display); letter-spacing: .04em; border: 2px solid var(--line); padding: 8px 12px; color: var(--ink); }
+
+/* jocs */
+.games { display: grid; gap: 72px; padding-block: 40px 80px; }
+.game { display: grid; grid-template-columns: 1.25fr 1fr; gap: 36px; align-items: start; }
+.game:nth-child(even) .shots { order: 2; }
+.game > * { min-width: 0; }
+.shots { display: grid; gap: 10px; }
+.shots .cover { border: 3px solid var(--accent); box-shadow: 8px 8px 0 color-mix(in srgb, var(--accent) 35%, transparent); }
+.shots .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.shots .row img { border: 2px solid var(--line); }
+.game.ferro { --accent: var(--copper); }
+.game.suma { --accent: var(--teal); }
+.kind { font: 600 .8rem/1 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 0; }
+.game h2 { font: 700 clamp(2rem, 4vw, 2.8rem)/1 var(--display); margin: 10px 0 16px; }
+.lema { font-style: italic; font-size: 1.2rem; line-height: 1.45; margin: 0 0 16px; border-left: 3px solid var(--accent); padding-left: 14px; }
+.game p.desc { color: var(--ink-dim); margin: 0 0 22px; max-width: 52ch; }
+.meta { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; margin: 0 0 26px; font-size: .95rem; }
+.meta dt { font: 500 .8rem/1.9 var(--display); color: var(--ink-dim); text-transform: uppercase; letter-spacing: .08em; }
+.meta dd { margin: 0; }
+.play {
+  display: inline-flex; align-items: center; gap: 10px;
+  font: 700 1.05rem/1 var(--display); letter-spacing: .03em;
+  background: var(--accent); color: var(--night); text-decoration: none;
+  padding: 14px 22px; box-shadow: 4px 4px 0 var(--ink);
+  transition: transform .08s, box-shadow .08s;
+}
+.play:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
+.play:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--ink); }
+.play svg { width: 12px; height: 14px; }
+
+/* manifest */
+.manifest { background: var(--night-2); border-block: 2px solid var(--line); }
+.manifest .wrap { padding-block: 64px; display: grid; grid-template-columns: 1fr 1.6fr; gap: 40px; }
+.manifest h2 { font: 600 clamp(1.7rem, 3.4vw, 2.3rem)/1.1 var(--display); margin: 0; text-wrap: balance; }
+.manifest ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 22px; }
+.manifest li { display: grid; grid-template-columns: 22px 1fr; gap: 14px; }
+.manifest li::before { content: ""; width: 12px; height: 12px; margin-top: 7px; background: var(--sap); box-shadow: 6px -6px 0 -2px var(--sap); }
+.manifest strong { display: block; font: 600 1.05rem/1.3 var(--display); margin-bottom: 4px; }
+.manifest li span { color: var(--ink-dim); }
+
+/* peu */
+footer .wrap { padding-block: 40px 56px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px; color: var(--ink-dim); font-size: .95rem; }
+footer a { color: var(--sap); }
+
+@media (max-width: 760px) {
+  .game, .manifest .wrap { grid-template-columns: 1fr; }
+  .game:nth-child(even) .shots { order: 0; }
+  .hero { padding-block: 32px 24px; }
+}
+@media (prefers-reduced-motion: reduce) { .play { transition: none; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="Mala Herba Soft, inici">
+      <svg viewBox="0 0 12 12" aria-hidden="true" shape-rendering="crispEdges">
+        <rect x="5" y="4" width="2" height="8" fill="#9cc46a"/>
+        <rect x="2" y="2" width="3" height="2" fill="#9cc46a"/><rect x="3" y="4" width="2" height="1" fill="#9cc46a"/>
+        <rect x="7" y="0" width="3" height="2" fill="#9cc46a"/><rect x="7" y="2" width="2" height="1" fill="#9cc46a"/>
+        <rect x="0" y="11" width="4" height="1" fill="#5c5670"/><rect x="8" y="11" width="4" height="1" fill="#5c5670"/>
+        <rect x="3" y="10" width="1" height="1" fill="#5c5670"/><rect x="8" y="10" width="1" height="1" fill="#5c5670"/>
+      </svg>
+      <b>Mala Herba <span>Soft</span></b>
+    </a>
+    <nav aria-label="Seccions">
+      <a href="#jocs">Jocs</a>
+      <a href="#qui">Qui som</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Aventures gràfiques en català que <em>creixen on no toca</em>.</h1>
+      <p>Fem jocs de «point &amp; click» amb humor, cor i alguna cosa a dir. Es juguen al navegador i són gratuïts.</p>
+      <ul class="facts" aria-label="En resum">
+        <li>2 jocs</li>
+        <li>100% en català</li>
+        <li>Gratuïts</li>
+        <li>Sense anuncis</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap games" id="jocs" aria-label="Jocs">
+    <article class="game ferro">
+      <div class="shots">
+        <img class="px cover" src="img/ferro9-portada.png" alt="Portada de Ferro-9: una fàbrica de maó de nit i, a l'altra banda d'una esquerda, una estació en òrbita sobre la Terra" width="480" height="270">
+        <div class="row">
+          <img class="px" src="img/ferro9-calderes.png" alt="La sala de calderes de la fàbrica, amb formularis 27-B a la paret" width="480" height="270" loading="lazy">
+          <img class="px" src="img/ferro9-cella.png" alt="Una cel·la de La Gavina, la presó orbital, amb un ull de bou que dona a la Terra" width="480" height="270" loading="lazy">
+        </div>
+      </div>
+      <div>
+        <p class="kind">Ciència-ficció retrofuturista</p>
+        <h2>Ferro-9</h2>
+        <p class="lema">Dues dones, 120 anys i una paret entremig. Tot el que envies canvia el que hi trobaràs.</p>
+        <p class="desc">L'Iri fa el torn de nit en una fàbrica de ferro-9. La Vet és presonera a La Gavina, una presó en òrbita feta amb les restes d'aquella mateixa fàbrica, i d'aquí a tres dies la «reciclaran». Una finestra de fase les connecta: el que una amaga al passat, l'altra ho troba al present.</p>
+        <dl class="meta">
+          <dt>Durada</dt><dd>2–3 hores</dd>
+          <dt>Edat</dt><dd>A partir de 12 anys</dd>
+          <dt>Juga a</dt><dd>Navegador, ordinador</dd>
+        </dl>
+        <a class="play" href="#">
+          <svg viewBox="0 0 6 7" aria-hidden="true" shape-rendering="crispEdges"><path d="M0 0h2v1h2v1h2v3h-2v1h-2v1h-2z" fill="currentColor"/></svg>
+          Juga a Ferro-9
+        </a>
+      </div>
+    </article>
+
+    <article class="game suma">
+      <div class="shots">
+        <img class="px cover" src="img/sumazero-portada.png" alt="Portada de Suma Zero: un pis amb una finestra il·luminada, la ciutat de nit i la torre del banc al fons" width="480" height="270" loading="lazy">
+        <div class="row">
+          <img class="px" src="img/sumazero-bar.png" alt="El bar La Propina, amb el cartell «El cliente siempre tiene razón (excepto si no paga)»" width="480" height="270" loading="lazy">
+          <img class="px" src="img/sumazero-terminal.png" alt="La terminal de l'aeroport, amb el panell de sortides cap a Ginebra" width="480" height="270" loading="lazy">
+        </div>
+      </div>
+      <div>
+        <p class="kind">Comèdia de cops amb cor polític</p>
+        <h2>Suma Zero</h2>
+        <p class="lema">Tot el que algú perd, algú ho guanya. Aquesta nit, al revés.</p>
+        <p class="desc">L'Iri és hacker; la Vet, cambrera i mentidera professional. No tenen ni per pizzes. Volen colar-se al Banc Central Mundial Unificat i repartir tots els diners del món a parts iguals. El pla és un desastre. Funciona massa bé.</p>
+        <dl class="meta">
+          <dt>Durada</dt><dd>2–3 hores</dd>
+          <dt>Edat</dt><dd>A partir de 12 anys</dd>
+          <dt>Juga a</dt><dd>Navegador, ordinador</dd>
+        </dl>
+        <a class="play" href="#">
+          <svg viewBox="0 0 6 7" aria-hidden="true" shape-rendering="crispEdges"><path d="M0 0h2v1h2v1h2v3h-2v1h-2v1h-2z" fill="currentColor"/></svg>
+          Juga a Suma Zero
+        </a>
+      </div>
+    </article>
+  </section>
+
+  <section class="manifest" id="qui">
+    <div class="wrap">
+      <h2>Per què fem jocs així</h2>
+      <ul>
+        <li><div><strong>L'Iri i la Vet, cada cop en un altre món</strong><span>Les mateixes dues protagonistes en històries independents. Cada joc es juga sol, però qui els juga tots hi troba picades d'ullet.</span></div></li>
+        <li><div><strong>En català, de cap a peus</strong><span>Escrits en català des del primer esborrany, no traduïts. Amb els girs, les bromes i els noms d'aquí.</span></div></li>
+        <li><div><strong>Gratuïts i sense trampes</strong><span>Sense anuncis, sense registre i sense recollir dades. Només cal un navegador.</span></div></li>
+        <li><div><strong>Amb alguna cosa a dir</strong><span>Treball, poder, diners i qui paga la factura. Ho expliquem rient, sense sermons.</span></div></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Mala Herba Soft és un projecte de <a href="https://webcoop.cat/">WebCoop</a>.</span>
+    <span>malaherbasoft.cat</span>
+  </div>
+</footer>
+</body>
+</html>
