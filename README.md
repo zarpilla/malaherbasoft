@@ -16,6 +16,9 @@ Cada push a `main` publica `public/` a malaherbasoft.cat amb GitHub Actions
 conté `[skip deploy]`, no es desplega. També es pot llançar a mà des de la
 pestanya Actions (*Run workflow*).
 
+Els jocs (`/aigua-bruta/`, `/ferro-9/`, `/suma-zero/`) els publica la CI del repo dels jocs, cadascun a la
+seva carpeta. El `rsync --delete` d'aquí les exclou: un joc nou s'hi ha d'afegir.
+
 ## Estadístiques
 
 `api/` és un servei petit que compta partides, actes, finals i temps de joc, de forma anònima. No es

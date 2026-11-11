@@ -27,10 +27,12 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
 
+      # Els jocs els publica la CI del repo dels jocs, cadascun a la seva carpeta: el --delete no les ha de tocar.
       - name: Puja la web
         env:
           DEPLOY_TARGET: ${{ secrets.DEPLOY_TARGET }}
         run: |
           rsync -rlz --delete --checksum --chmod=D755,F644 \
+            --exclude=/aigua-bruta/ --exclude=/ferro-9/ --exclude=/suma-zero/ \
             -e "ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes" \
             public/ "$DEPLOY_TARGET:"
