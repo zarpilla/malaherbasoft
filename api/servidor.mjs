@@ -4,12 +4,12 @@
 //   POST /api/e     {"joc":"ferro-9","ev":"acte","v":"2"}   → 204
 //   GET  /api/resum?dies=30   (amb la capçalera "Authorization: Bearer $RESUM_TOKEN")
 //
-// Variables d'entorn: PORT (8787), HOST (127.0.0.1; 0.0.0.0 dins de Docker), DB (./estadistiques.sqlite), JOCS (ferro-9,suma-zero),
+// Variables d'entorn: PORT (8787), HOST (127.0.0.1; 0.0.0.0 dins de Docker), DB (./estadistiques.sqlite), JOCS (ferro-9,suma-zero,aigua-bruta),
 // RESUM_TOKEN (sense, /api/resum queda desactivat).
 import { createServer } from 'node:http';
 import { DatabaseSync } from 'node:sqlite';
 
-const JOCS = new Set((process.env.JOCS ?? 'ferro-9,suma-zero').split(',').map((s) => s.trim()).filter(Boolean));
+const JOCS = new Set((process.env.JOCS ?? 'ferro-9,suma-zero,aigua-bruta').split(',').map((s) => s.trim()).filter(Boolean));
 const RESUM_TOKEN = process.env.RESUM_TOKEN ?? '';
 /** Una sessió no pot sumar més de 4 hores de cop (pestanyes oblidades, rellotges estranys). */
 const MAX_SEGONS = 4 * 3600;

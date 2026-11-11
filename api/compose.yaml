@@ -12,7 +12,7 @@ services:
       HOST: 0.0.0.0
       PORT: 8787
       DB: /dades/estadistiques.sqlite
-      JOCS: ferro-9,suma-zero
+      JOCS: ferro-9,suma-zero,aigua-bruta
       RESUM_TOKEN: ${RESUM_TOKEN:?falta RESUM_TOKEN al .env}
     volumes:
       - ./servidor.mjs:/app/servidor.mjs:ro
