@@ -26,4 +26,4 @@ tria un verb, clica una cosa, hi camina i diu la seva frase. Es fan des dels pro
 
 Cada escena (`escenes/*.json`) diu on és cada protagonista, quins clics treuen el diàleg d'entrada (en una
 casella buida de l'inventari: el botó de menú és a la dreta de la barra) i què es fa mentre es grava. Les
-coordenades són en píxels del joc (480×270); els verbs són al mateix lloc als tres jocs (Mira: 143, 258).
+coordenades són en píxels del joc (640×360); els verbs són al mateix lloc als tres jocs (Mira: 191, 344).

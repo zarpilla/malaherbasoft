@@ -1,6 +1,6 @@
 {
   "situacio": {"rooms": {"iri": "fabrica_calderes", "vet": "gavina_cella"}, "items": {"iri": ["llibreta_torn", "clau_anglesa"]}, "active": "iri"},
   "esperaEntrada": 5000,
-  "abans": [["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["move", 420, 30, 200], ["wait", 900]],
-  "passos": [["wait", 400], ["click", 143, 258], ["wait", 350], ["move", 357, 150, 600], ["wait", 500], ["tap", 357, 150], ["wait", 5200]]
+  "abans": [["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["move", 560, 40, 200], ["wait", 900]],
+  "passos": [["wait", 400], ["click", 191, 344], ["wait", 350], ["move", 476, 200, 600], ["wait", 500], ["tap", 476, 200], ["wait", 5200]]
 }

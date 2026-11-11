@@ -9,7 +9,7 @@
 // L'escena (vegeu eines/escenes/):
 //   situacio  on és cada protagonista i qui juga ({ rooms, items, active }, com a provar())
 //   abans     passos per treure el diàleg d'entrada de la sala, sense gravar
-//   passos    el que es grava. Coordenades en píxels del joc (480×270):
+//   passos    el que es grava. Coordenades en píxels del joc (640×360):
 //             ["move", x, y, ms] · ["click", x, y] (hi va i clica) · ["tap", x, y] (clica on és) · ["wait", ms]
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
@@ -22,14 +22,15 @@ const escena = JSON.parse(fs.readFileSync(escenaFile, 'utf8'));
 fs.rmSync(outDir, { recursive: true, force: true });
 fs.mkdirSync(outDir, { recursive: true });
 
-// A escala 1, el text de la línia d'acció («Mira…») surt retallat: es grava a 2 i gif.py ho torna a 480×270.
+// A escala 1, el text de la línia d'acció («Mira…») surt retallat: es grava a 2 i gif.py ho torna a 640×360.
 const ESCALA = 2;
+const [AMPLADA, ALCADA] = [640, 360]; // la resolució dels jocs (la mateixa a gif.py)
 const port = 9333 + Math.floor(Math.random() * 500);
 const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'grava-'));
 const chrome = spawn(process.env.CHROME ?? 'google-chrome', [
   '--headless=new', `--remote-debugging-port=${port}`, `--user-data-dir=${profile}`,
   '--use-angle=gl', '--mute-audio', '--autoplay-policy=no-user-gesture-required',
-  `--window-size=${480 * ESCALA},${270 * ESCALA}`, 'about:blank',
+  `--window-size=${AMPLADA * ESCALA},${ALCADA * ESCALA}`, 'about:blank',
 ], { stdio: 'ignore' });
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 function surt(codi, ...missatge) {
@@ -68,7 +69,7 @@ const send = (method, params = {}) => new Promise((r) => {
 });
 const ev = async (expr) => (await send('Runtime.evaluate', { expression: expr, awaitPromise: true, returnByValue: true })).result?.result?.value;
 
-let mx = 470, my = 10;
+let mx = AMPLADA - 10, my = 10;
 const mouse = (type, x, y) => send('Input.dispatchMouseEvent', {
   type, x: x * ESCALA + ESCALA / 2, y: y * ESCALA + ESCALA / 2,
   button: type === 'mouseMoved' ? 'none' : 'left', clickCount: type === 'mouseMoved' ? 0 : 1,
@@ -95,7 +96,7 @@ async function run(steps) {
 }
 
 await send('Runtime.enable');
-await send('Emulation.setDeviceMetricsOverride', { width: 480 * ESCALA, height: 270 * ESCALA, deviceScaleFactor: 1, mobile: false });
+await send('Emulation.setDeviceMetricsOverride', { width: AMPLADA * ESCALA, height: ALCADA * ESCALA, deviceScaleFactor: 1, mobile: false });
 await send('Page.navigate', { url });
 for (let i = 0; i < 100 && !(await ev('!!window.__aventura')); i++) await wait(200);
 if (!(await ev('!!window.__aventura'))) await surt(1, 'No hi ha window.__aventura: és el joc amb `npm run dev`?');
@@ -116,7 +117,7 @@ if (ara !== sala) await surt(1, `No s'ha pogut anar a ${sala} (és a ${ara})`);
 await run(escena.abans ?? []);
 
 await ev('window.__grava = true');
-await send('Page.startScreencast', { format: 'png', everyNthFrame: 1, maxWidth: 480 * ESCALA, maxHeight: 270 * ESCALA });
+await send('Page.startScreencast', { format: 'png', everyNthFrame: 1, maxWidth: AMPLADA * ESCALA, maxHeight: ALCADA * ESCALA });
 await run(escena.passos);
 await send('Page.stopScreencast');
 await wait(200);

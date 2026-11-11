@@ -4,7 +4,7 @@ Web del segell (malaherbasoft.cat): aventures gràfiques en català, gratuïtes 
 
 - `public/` és la web tal com es publica.
 - `public/index.html`: la landing, una sola pàgina estàtica sense dependències (només Google Fonts).
-- `public/img/`: la portada de cada joc (el primer fotograma, 480×270) i dues gravacions de partida en GIF
+- `public/img/`: la portada de cada joc (el primer fotograma, 640×360, com els jocs) i dues gravacions de partida en GIF
   (`*-joc.gif`, `*-joc2.gif`), que es fan amb les eines d'[`eines/`](eines/README.md). Es mostren pixelades.
 
 Per veure-la: obre `public/index.html` al navegador.

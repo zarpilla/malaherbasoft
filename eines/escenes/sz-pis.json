@@ -1,6 +1,6 @@
 {
   "situacio": {"rooms": {"iri": "pis_estudi", "vet": "bar_sala"}, "items": {"iri": ["cable_xarxa", "auriculars"]}, "active": "iri"},
   "esperaEntrada": 5000,
-  "abans": [["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["move", 420, 30, 200], ["wait", 900]],
-  "passos": [["wait", 400], ["click", 143, 258], ["wait", 350], ["move", 170, 159, 600], ["wait", 500], ["tap", 170, 159], ["wait", 5200]]
+  "abans": [["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["move", 560, 40, 200], ["wait", 900]],
+  "passos": [["wait", 400], ["click", 191, 344], ["wait", 350], ["move", 227, 212, 600], ["wait", 500], ["tap", 227, 212], ["wait", 5200]]
 }

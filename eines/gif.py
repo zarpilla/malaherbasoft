@@ -13,13 +13,14 @@ from PIL import Image, ImageChops
 carpeta, sortida = sys.argv[1], sys.argv[2]
 inici = int(sys.argv[3]) if len(sys.argv) > 3 else 0
 final = int(sys.argv[4]) if len(sys.argv) > 4 else 10**9
+AMPLADA, ALCADA = 640, 360  # la resolució dels jocs (la mateixa a grava.mjs)
 index = [f for f in json.load(open(f'{carpeta}/index.json')) if inici <= f['t'] <= final]
 
 frames, temps = [], []
 for f in index:
     im = Image.open(f"{carpeta}/{f['name']}").convert('RGB')
-    if im.size != (480, 270):  # gravat a escala 2: es torna als píxels del joc
-        im = im.resize((480, 270), Image.NEAREST)
+    if im.size != (AMPLADA, ALCADA):  # gravat a escala 2: es torna als píxels del joc
+        im = im.resize((AMPLADA, ALCADA), Image.NEAREST)
     if frames and ImageChops.difference(im, frames[-1]).getbbox() is None:
         continue
     frames.append(im)
@@ -29,9 +30,9 @@ durades = [max(20, round((b - a) / 10) * 10) for a, b in zip(temps, temps[1:])]
 
 # La paleta surt d'un mosaic d'una mostra dels fotogrames.
 mostra = frames[:: max(1, len(frames) // 24)][:24]
-mosaic = Image.new('RGB', (480, 270 * len(mostra)))
+mosaic = Image.new('RGB', (AMPLADA, ALCADA * len(mostra)))
 for i, im in enumerate(mostra):
-    mosaic.paste(im, (0, i * 270))
+    mosaic.paste(im, (0, i * ALCADA))
 metode = Image.Quantize.LIBIMAGEQUANT if Image.core.HAVE_LIBIMAGEQUANT else Image.Quantize.MEDIANCUT
 paleta = mosaic.quantize(256, method=metode, dither=Image.Dither.NONE)
 gif = [im.quantize(palette=paleta, dither=Image.Dither.NONE) for im in frames]
