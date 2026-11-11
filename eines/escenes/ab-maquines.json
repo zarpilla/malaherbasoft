@@ -1,0 +1,6 @@
+{
+  "situacio": {"rooms": {"iri": "sala_maquines", "vet": "pont"}, "items": {"iri": ["walkie", "llibreta"], "vet": ["walkie", "quadern"]}, "active": "iri"},
+  "esperaEntrada": 5000,
+  "abans": [["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["tap", 432, 222], ["wait", 800], ["move", 420, 30, 200], ["wait", 900]],
+  "passos": [["wait", 400], ["click", 143, 258], ["wait", 350], ["move", 200, 58, 600], ["wait", 500], ["tap", 200, 58], ["wait", 5200]]
+}
