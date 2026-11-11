@@ -6,13 +6,13 @@ tria un verb, clica una cosa, hi camina i diu la seva frase. Es fan des dels pro
 1. Engega el joc en desenvolupament (cal `provar`, que només hi és amb `npm run dev`), un port per joc:
 
    ```bash
-   cd ../jocs/games/aigua-bruta/aigua-bruta && npx vite --port 5181
+   cd ../jocs/games/ni-un-ou/ni-un-ou && npx vite --port 5181
    ```
 
 2. Grava l'escena (Node 22 o més nou i Google Chrome):
 
    ```bash
-   node eines/grava.mjs http://127.0.0.1:5181/ eines/escenes/ab-maquines.json /tmp/ab-maquines
+   node eines/grava.mjs http://127.0.0.1:5181/ eines/escenes/nuo-maquines.json /tmp/nuo-maquines
    ```
 
    Si surt «Gravació dolenta», torna-ho a provar: la pàgina s'ha recarregat (algú tocava el joc).
@@ -21,7 +21,7 @@ tria un verb, clica una cosa, hi camina i diu la seva frase. Es fan des dels pro
 3. Fes-ne el GIF:
 
    ```bash
-   python3 eines/gif.py /tmp/ab-maquines public/img/aiguabruta-joc.gif
+   python3 eines/gif.py /tmp/nuo-maquines public/img/niunou-joc.gif
    ```
 
 Cada escena (`escenes/*.json`) diu on és cada protagonista, quins clics treuen el diàleg d'entrada (en una

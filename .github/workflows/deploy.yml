@@ -33,6 +33,6 @@ jobs:
           DEPLOY_TARGET: ${{ secrets.DEPLOY_TARGET }}
         run: |
           rsync -rlz --delete --checksum --chmod=D755,F644 \
-            --exclude=/aigua-bruta/ --exclude=/ferro-9/ --exclude=/suma-zero/ \
+            --exclude=/ni-un-ou/ --exclude=/ferro-9/ --exclude=/suma-zero/ \
             -e "ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes" \
             public/ "$DEPLOY_TARGET:"
