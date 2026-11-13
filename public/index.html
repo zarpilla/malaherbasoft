@@ -21,6 +21,7 @@
   --copper: #e0894a;     /* Ferro-9 */
   --teal: #5fd4c4;       /* Suma Zero */
   --sea: #7aaee0;        /* Ni un ou */
+  --sun: #e8a94e;        /* Aigua Verne */
   --line: #2f2a44;
   --display: "Pixelify Sans", "Courier New", monospace;
   --body: "Atkinson Hyperlegible", system-ui, sans-serif;
@@ -73,6 +74,7 @@ header .wrap { display: flex; align-items: center; justify-content: space-betwee
 .game.ferro { --accent: var(--copper); }
 .game.suma { --accent: var(--teal); }
 .game.niunou { --accent: var(--sea); }
+.game.verne { --accent: var(--sun); }
 .kind { font: 600 .8rem/1 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 0; }
 .game h2 { font: 700 clamp(2rem, 4vw, 2.8rem)/1 var(--display); margin: 10px 0 12px; }
 .lema { font-style: italic; font-size: 1.2rem; line-height: 1.45; margin: 0 0 12px; border-left: 3px solid var(--accent); padding-left: 14px; }
@@ -90,6 +92,10 @@ header .wrap { display: flex; align-items: center; justify-content: space-betwee
 .play:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
 .play:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--ink); }
 .play svg { width: 12px; height: 14px; }
+.soon {
+  display: inline-block; font: 700 1.05rem/1 var(--display); letter-spacing: .03em;
+  color: var(--accent); border: 2px dashed var(--accent); padding: 12px 20px; margin: 0;
+}
 
 /* manifest */
 .manifest { background: var(--night-2); border-block: 2px solid var(--line); }
@@ -217,6 +223,25 @@ footer a { color: var(--sap); }
           <svg viewBox="0 0 6 7" aria-hidden="true" shape-rendering="crispEdges"><path d="M0 0h2v1h2v1h2v3h-2v1h-2v1h-2z" fill="currentColor"/></svg>
           Juga a Ferro-9
         </a>
+      </div>
+    </article>
+    <article class="game verne">
+      <div class="shots">
+        <img class="px cover" src="img/aiguaverne-joc.png" alt="Aigua Verne: al saló del palau orbital, l'Aurelià Verne presideix la subhasta davant dels inversors; a la pantalla, el preu de l'aigua s'enfila fins a 112 cèntims el litre" width="640" height="360" loading="lazy">
+        <div class="row">
+          <img class="px" src="img/aiguaverne-portada.png" alt="Portada d'Aigua Verne: una etiqueta d'ampolla d'aigua penjada sobre un desert a la posta de sol, amb la Cantimplora aparcada a terra" width="640" height="360" loading="lazy">
+          <img class="px" src="img/aiguaverne-joc2.png" alt="La galeria del palau orbital del Magnat: piscines buides en filera sota una vidriera que dona a l'espai, i un aquari amb els últims peixos d'Aqua" width="640" height="360" loading="lazy">
+        </div>
+      </div>
+      <div>
+        <p class="kind">Comèdia espacial d'atracament</p>
+        <h2>Aigua Verne</h2>
+        <p class="lema">L'aigua no s'ha acabat. Està guardada.</p>
+        <p class="desc">Al sistema de Vesper, el Magnat Aurelià Verne bomba l'aigua de tres planetes cap a uns dipòsits en òrbita i la torna a vendre gota a gota, cada dilluns una mica més cara. L'Iri, pilot, i la Vet, enginyera, no volen salvar ningú: volen el pou de la granja del pare. Per tenir-lo, hauran d'obrir els dipòsits el dia que el Magnat s'ho juga tot.</p>
+        <dl class="meta">
+          <dt>Juga a</dt><dd>Navegador, ordinador</dd>
+        </dl>
+        <p class="soon">Properament</p>
       </div>
     </article>
   </section>
