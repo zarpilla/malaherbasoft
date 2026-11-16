@@ -106,7 +106,11 @@ await mouse('mouseMoved', mx, my);
 // provar() de vegades arriba abans que el joc estigui a punt: es torna a provar fins que som a la sala.
 const s = escena.situacio;
 const sala = s.rooms[s.active];
-const provar = `(() => { const a = window.__aventura; a.provar({ state: a.narrative.snapshot(), rooms: ${JSON.stringify(s.rooms)}, items: ${JSON.stringify(s.items ?? {})}, active: ${JSON.stringify(s.active)} }) })()`;
+// L'estat de partida (flags, variables...) que hi hagi a `situacio.estat` s'afegeix al de l'inici del joc.
+const provar = `(() => { const a = window.__aventura; const st = a.narrative.snapshot();
+  const fusiona = (d, o) => { for (const [k, v] of Object.entries(o)) { if (v && typeof v === 'object' && !Array.isArray(v) && d[k] && typeof d[k] === 'object') fusiona(d[k], v); else d[k] = v; } };
+  fusiona(st, ${JSON.stringify(s.estat ?? {})});
+  a.provar({ state: st, rooms: ${JSON.stringify(s.rooms)}, items: ${JSON.stringify(s.items ?? {})}, active: ${JSON.stringify(s.active)} }) })()`;
 let ara;
 for (let i = 0; i < 5 && ara !== sala; i++) {
   await ev(provar);

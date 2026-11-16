@@ -2,5 +2,5 @@
   "situacio": {"rooms": {"vet": "pont", "iri": "sala_maquines"}, "items": {"vet": ["walkie", "quadern"], "iri": ["walkie", "llibreta"]}, "active": "vet"},
   "esperaEntrada": 5000,
   "abans": [["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["move", 560, 40, 200], ["wait", 900]],
-  "passos": [["wait", 400], ["click", 191, 344], ["wait", 350], ["move", 320, 80, 600], ["wait", 500], ["tap", 320, 80], ["wait", 5200]]
+  "passos": [["wait", 400], ["move", 320, 80, 600], ["wait", 500], ["tap", 320, 80], ["wait", 5200]]
 }
