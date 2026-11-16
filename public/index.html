@@ -107,6 +107,13 @@ header .wrap { display: flex; align-items: center; justify-content: space-betwee
 .manifest strong { display: block; font: 600 1.05rem/1.3 var(--display); margin-bottom: 4px; }
 .manifest li span { color: var(--ink-dim); }
 
+/* cafè */
+.cafe .wrap { padding-block: 56px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; }
+.cafe p { margin: 0; max-width: 52ch; color: var(--ink-dim); font-size: 1.1rem; }
+.cafe p strong { display: block; color: var(--ink); font: 600 clamp(1.4rem, 3vw, 1.8rem)/1.2 var(--display); margin-bottom: 6px; }
+.cafe .play { --accent: var(--sap); }
+.cafe .play svg { width: 16px; height: 14px; }
+
 /* peu */
 footer .wrap { padding-block: 40px 56px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px; color: var(--ink-dim); font-size: .95rem; }
 footer a { color: var(--sap); }
@@ -255,6 +262,16 @@ footer a { color: var(--sap); }
         <li><div><strong>Gratuïts i sense trampes</strong><span>Sense anuncis, sense registre i sense galetes. Només cal un navegador.</span></div></li>
         <li><div><strong>Amb alguna cosa a dir</strong><span>Treball, poder, diners i qui paga la factura. Ho expliquem rient, i les conclusions les treus tu.</span></div></li>
       </ul>
+    </div>
+  </section>
+
+  <section class="cafe" aria-label="Dona suport">
+    <div class="wrap">
+      <p><strong>Ens convides a un cafè?</strong>Els jocs són i seran gratuïts. Si t'han fet riure, un cafè ens ajuda a fer-ne més.</p>
+      <a class="play" href="https://buymeacoffee.com/malaherbasoft" target="_blank" rel="noopener">
+        <svg viewBox="0 0 8 7" aria-hidden="true" shape-rendering="crispEdges"><path d="M0 1h6v1h2v3h-2v1h-1v1h-4v-1h-1zM6 3v1h1v-1z" fill="currentColor" fill-rule="evenodd"/></svg>
+        Convida'ns a un cafè
+      </a>
     </div>
   </section>
 </main>
