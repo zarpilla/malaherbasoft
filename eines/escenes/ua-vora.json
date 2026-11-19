@@ -1,0 +1,6 @@
+{
+  "situacio": {"rooms": {"iri": "vora_bosc", "vet": "vora_bosc"}, "items": {}, "active": "iri"},
+  "esperaEntrada": 5000,
+  "abans": [["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["tap", 576, 296], ["wait", 800], ["move", 560, 40, 200], ["wait", 900]],
+  "passos": [["move", 639, 359, 200], ["wait", 1500]]
+}
