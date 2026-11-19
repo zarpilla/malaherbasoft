@@ -7,6 +7,7 @@ Web del segell (malaherbasoft.cat): aventures gràfiques en català, gratuïtes 
 - `public/img/`: la portada de cada joc (la pantalla de títol sense els botons, 640×360, com els jocs) i dues captures de partida
   (`*-joc.png`, `*-joc2.png`), que es fan amb les eines d'[`eines/`](eines/README.md). Es mostren pixelades.
 - `referencia/`: les fitxes de sales de cada joc (`*-sales.png`), només com a referència; la web no les fa servir.
+  Es fan amb `npm run full-sales` des de `../jocs/games/<joc>/`, que les escriu aquí directament.
 
 Per veure-la: obre `public/index.html` al navegador.
 
