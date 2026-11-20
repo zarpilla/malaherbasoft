@@ -34,5 +34,6 @@ jobs:
         run: |
           rsync -rlz --delete --checksum --chmod=D755,F644 \
             --exclude=/ni-un-ou/ --exclude=/ferro-9/ --exclude=/suma-zero/ \
+            --exclude=/aigua-verne/ --exclude=/ultima-arrel/ \
             -e "ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes" \
             public/ "$DEPLOY_TARGET:"
