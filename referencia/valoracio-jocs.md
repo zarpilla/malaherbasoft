@@ -6,8 +6,7 @@ d'Aigua Verne. Només per a consulta: la web no les fa servir.
 
 **Com s'ha fet.** Llegint el guió sencer de cada joc (`../jocs/games/<joc>/guio/guio.md`) i les dades del contingut:
 sales, pistes, missions, finals i la partida sencera dels tests. Ningú no ha jugat cap joc per fer-les, així que les
-durades són estimacions. On una nota ha canviat, la taula mostra «abans → ara»: el primer número és el de la
-valoració inicial, i el segon, el d'després dels arreglos (més avall).
+durades són estimacions.
 
 ## Els aspectes principals
 
@@ -15,24 +14,23 @@ valoració inicial, i el segon, el d'després dels arreglos (més avall).
 |---|---|---|---|---|---|
 | **Dificultat** | 5,5 | 6 | 5 | 6,5 | 2 |
 | **Durada** (h, primera partida sense pistes) | 3–4 | 4–6 | 3,5–5 | 5–7 | ~1 (adult) / ~1,5 (nena) |
-| **Humor** | 7 → 8 | 8,5 → **9** | 6,5 → 7,5 | 8,5 → **9** | 7,5 → 8 |
-| **Originalitat** | **8,5** | 7,5 | 6,5 → 7 | 7 | 7,5 |
-| **Coherència** | 7 → 8,5 | 8 → **9** | 8,5 → **9** | 6,5 → 8 | 7,5 → 8,5 |
+| **Humor** | 8 | **9** | 7,5 | **9** | 8 |
+| **Originalitat** | **8,5** | 7,5 | 7 | 7 | 7,5 |
+| **Coherència** | 8,5 | **9** | **9** | 8 | 8,5 |
 
 ## Altres aspectes
 
 | | Ferro-9 | Suma Zero | Ni un ou | Aigua Verne | L'Última Arrel |
 |---|---|---|---|---|---|
 | **Personatges** | 8 | 8 | 8,5 | 8,5 | 7,5 |
-| **Pes emocional** | **8** | 6 | **8** | 7,5 | 6,5 → 7 |
+| **Pes emocional** | **8** | 6 | **8** | 7,5 | 7 |
 | **Tema / missatge** | 8 | 8,5 | 8,5 | **9** | 8,5 |
-| **Disseny dels trencaclosques** | 8 | **8,5** | 8 | 7 → 8 | 7 → 7,5 |
-| **Rejugabilitat** (finals, aliats) | 7 (3 finals) | 7 (3 finals) | 7 (3 finals) | 4 → 5 (1 final, camins) | 3 → 4 (1 final, llibreta) |
+| **Disseny dels trencaclosques** | 8 | **8,5** | 8 | 8 | 7,5 |
+| **Rejugabilitat** (finals, aliats) | 7 (3 finals) | 7 (3 finals) | 7 (3 finals) | 5 (1 final, camins) | 4 (1 final, llibreta) |
 
 Fent la mitjana dels aspectes de qualitat (sense la dificultat ni la durada), Ferro-9 queda a 8,0, Suma Zero i Ni un
-ou a 7,9, Aigua Verne a 7,8 i L'Última Arrel a 7,3. Abans dels arreglos eren 7,7, 7,7, 7,7, 7,3 i 6,9. Les diferències
-entre els tres primers continuen sent massa petites per dir quin és millor. Qui ha pujat més és Aigua Verne, gràcies a
-la coherència i als trencaclosques nous. L'Última Arrel perd sobretot per rejugabilitat, i és per a nenes de 8 a 12 anys: per
+ou a 7,9, Aigua Verne a 7,8 i L'Última Arrel a 7,3. Les diferències
+entre els tres primers són massa petites per dir quin és millor. L'Última Arrel perd sobretot per rejugabilitat, i és per a nenes de 8 a 12 anys: per
 a aquest públic, la poca dificultat i la poca durada són virtuts. A més, la rejugabilitat es mesura comptant finals,
 i això és un barem d'adults: un nen torna a jugar un joc perquè li ha agradat. Sense la rejugabilitat, L'Última Arrel
 quedaria a 7,8 i Ferro-9 a 8,1.
@@ -109,9 +107,8 @@ Commit `d981338` del repo dels jocs. Per a la rejugabilitat i el pes emocional, 
 - **La llibreta de camp.** 12 observacions opcionals, una o dues per escena: la Iri les apunta amb la lupa, i la Vet
   les dicta pel walkie. Cadascuna és una dada real d'una línia. Al final es diu quantes se n'han apuntat («Les
   pàgines en blanc esperen una altra visita al bosc»). No en cal cap per acabar, i les pistes no hi apunten.
-  Rejugabilitat: 3 → 4.
 - **L'avi.** A la sorpresa de l'epíleg, l'Espora explica que l'avi venia cada dissabte, i que el canal 7, «el número
-  més valent», el va triar ell. Pes emocional: 6,5 → 7.
+  més valent», el va triar ell.
 
 ## Els trencaclosques nous (Aigua Verne)
 
@@ -127,7 +124,6 @@ Commit `576d697` del repo dels jocs. Per al disseny dels trencaclosques, que era
 - **Ferrum.** El condensador ja no és un encàrrec de peces: només s'engega amb targeta de treballador de Verne, i
   l'únic que supera el formulari de contractació és la Mosca.
 - **En Fidel.** Segon camí: el tractor de l'avi, «pagat amb un pou», com a aval en lloc del sac de llavors.
-- Disseny dels trencaclosques: 7 → 8. Rejugabilitat: 4 → 5 (dos passos amb dos camins, i la partida previsora).
 
 ## Per a la web
 
