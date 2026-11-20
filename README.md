@@ -8,6 +8,8 @@ Web del segell (malaherbasoft.cat): aventures gràfiques en català, gratuïtes 
   (`*-joc.png`, `*-joc2.png`), que es fan amb les eines d'[`eines/`](eines/README.md). Es mostren pixelades.
 - `referencia/`: les fitxes de sales de cada joc (`*-sales.png`), només com a referència; la web no les fa servir.
   Es fan amb `npm run full-sales` des de `../jocs/games/<joc>/`, que les escriu aquí directament.
+  També hi ha la [valoració dels cinc jocs](referencia/valoracio-jocs.md): puntuacions de dificultat, durada, humor,
+  originalitat, coherència i altres aspectes.
 
 Per veure-la: obre `public/index.html` al navegador.
 
