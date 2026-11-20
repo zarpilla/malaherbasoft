@@ -64,8 +64,9 @@ header .wrap { display: flex; align-items: center; justify-content: space-betwee
 .facts li { font: 500 .85rem/1 var(--display); letter-spacing: .04em; border: 2px solid var(--line); padding: 8px 12px; color: var(--ink); }
 
 /* jocs */
-.games { display: grid; gap: 72px; padding-block: 40px 80px; }
+.games { display: grid; gap: 112px; padding-block: 40px 80px; }
 .game { display: grid; grid-template-columns: 1.25fr 1fr; gap: 36px; align-items: start; }
+.game:nth-child(even) { grid-template-columns: 1fr 1.25fr; }
 .game:nth-child(even) .shots { order: 2; }
 .game > * { min-width: 0; }
 .shots { display: grid; gap: 10px; }
@@ -121,7 +122,7 @@ footer .wrap { padding-block: 40px 56px; display: flex; flex-wrap: wrap; justify
 footer a { color: var(--sap); }
 
 @media (max-width: 760px) {
-  .game, .manifest .wrap { grid-template-columns: 1fr; }
+  .game, .game:nth-child(even), .manifest .wrap { grid-template-columns: 1fr; }
   .game:nth-child(even) .shots { order: 0; }
   .hero { padding-block: 32px 24px; }
 }
